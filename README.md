@@ -51,3 +51,30 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+
+
+### Answer
+
+#### The total worst-case time complexity is constant with O(maxIterate * (len + k - i + 1)).
+
+1. The function twoOptSwap takes the route length O(len), then createRoute.slice(i+1, k+1) is create a new array with time complexity of O(k-i+1), and then reverses elements in place. So, the worst-case time complexity is O(len+ k-i+1).
+
+2. The countPathLength function iterating over route and count to totalLength whose worst-case time complexity is O(len)
+
+3. tsp_ls takes O(maxIterate)
+
+So, the total complexity of this implementation is O(maxIterate * (len + k - i + 1)).
+
+
+
+
+#### The worst-case memory complexity is O(len*2^(len-1) + len), where 'len' is the route length.
+
+1. The memory complexity of the twoOptSwap function is O(len + k - i + 1).
+
+2. The countPathLength function memory complexity is constant since adding totalLength every time O(1).
+
+3. len, currentRoute, cur, j, i, k, newRoute: O(len). The tsp function has two options for including cities in the subset: either they are included or not. This leads to a total of 2^(len-1) possible subsets. The cache object must store results for each combination of subsets and starting cities, resulting in a size of O(len * 2^(len-1)).
+
+Therefore, the total memory complexity in worst-case of O(len*2^(len-1) + len).
