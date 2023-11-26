@@ -56,22 +56,21 @@ reasoning, to this markdown file.
 
 ### Answer
 
-#### The total worst-case time complexity is constant with O(maxIterate * (len + k - i + 1)).
+#### The total worst-case time complexity is constant with O(len^2), len is the number of vertices.
 
-1. The function twoOptSwap takes the route length O(len), then createRoute.slice(i+1, k+1) is create a new array with time complexity of O(k-i+1), and then reverses elements in place. So, the worst-case time complexity is O(len+ k-i+1).
+1. The function twoOptSwap takes the route length O(len), then createRoute.slice(i+1, k+1) is create a new array with time complexity of O(k-i+1), and then reverses elements in place. So, the worst-case time complexity is O(len).
 
 2. The countPathLength function iterating over route and count to totalLength whose worst-case time complexity is O(len)
 
-3. tsp_ls takes O(maxIterate)
+3. tsp_ls takes O(len^2)
 
-So, the total complexity of this implementation is O(maxIterate * (len + k - i + 1)).
-
+So, the total complexity of this implementation is O(len^2).
 
 
 
 #### The worst-case memory complexity is O(len*2^(len-1) + len), where 'len' is the route length.
 
-1. The memory complexity of the twoOptSwap function is O(len + k - i + 1).
+1. The memory complexity of the twoOptSwap function is O(len).
 
 2. The countPathLength function memory complexity is constant since adding totalLength every time O(1).
 
