@@ -68,12 +68,10 @@ So, the total complexity of this implementation is O(len^2).
 
 
 
-#### The worst-case memory complexity is O(len*2^(len-1) + len), where 'len' is the route length.
+#### The worst-case memory time complexity is O(n^2), where n is the matrix length.
 
-1. The memory complexity of the twoOptSwap function is O(len).
+1. The memory complexity of the twoOptSwap function is O(n), and n is the length of currentRoute array.
 
 2. The countPathLength function memory complexity is constant since adding totalLength every time O(1).
 
-3. len, currentRoute, cur, j, i, k, newRoute: O(len). The tsp function has two options for including cities in the subset: either they are included or not. This leads to a total of 2^(len-1) possible subsets. The cache object must store results for each combination of subsets and starting cities, resulting in a size of O(len * 2^(len-1)).
-
-Therefore, the total memory complexity in worst-case of O(len*2^(len-1) + len).
+3. distance_matrix, currentRoute, cur, maxIterate, loop i, j, and k are used memory in the tsp_ls function. distance_matrix arrays take o(n^2), since its a n*n matrix. currentRoute array worst-case memory complexity is O(n), and n is the length of the matrix length. Since distance_matrix and currentRoute occupy the dominant part of memory usage. So, by adding those steps together, the total memory complexity is in the worst-case of O(n^2).
