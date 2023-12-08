@@ -68,10 +68,12 @@ So, the total complexity of this implementation is O(len^2).
 
 
 
-#### The worst-case memory time complexity is O(n^2), where n is the matrix length.
+#### The worst-case memory time complexity is O(n), where n is the matrix length.
 
-1. The memory complexity of the twoOptSwap function is O(n), and n is the length of currentRoute array.
+
+
+1. The memory complexity of the twoOptSwap function is O(n), n is the length of currentRoute array.
 
 2. The countPathLength function memory complexity is constant since adding totalLength every time O(1).
 
-3. distance_matrix, currentRoute, cur, maxIterate, loop i, j, and k are used memory in the tsp_ls function. distance_matrix arrays take o(n^2), since its a n*n matrix. currentRoute array worst-case memory complexity is O(n), and n is the length of the matrix length. Since distance_matrix and currentRoute occupy the dominant part of memory usage. So, by adding those steps together, the total memory complexity is in the worst-case of O(n^2).
+3. distance_matrix, currentRoute, cur, maxIterate, loop i, j and k are use memory in tsp_ls function. currentRoute array worst case memory complexity is O(n), n is the length of the matrix length. Since  currentRoute occupy the dominate part of memory useage. So, by adding up those steps together, the total memory complexity in worst-case of O(n).
