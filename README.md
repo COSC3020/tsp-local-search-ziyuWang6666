@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12894734&assignment_repo_type=AssignmentRepo)
 # Traveling Salesperson Problem -- Local Search
 
 This exercise is about the Traveling Salesperson Problem I mentioned in the
@@ -50,3 +51,29 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+
+
+### Answer
+
+#### The total worst-case time complexity is constant with 	$O(n^3)$, n is the number of vertices.
+
+1. The function twoOptSwap takes the route length O(n), then createRoute.slice(i+1, k+1) is create a new array with time complexity of O(k-i+1), and then reverses elements in place. So, the worst-case time complexity is O(n).
+
+2. The countPathLength function iterating over route and count to totalLength whose worst-case time complexity is O(n).
+
+3. The tsp_ls algorithm runs in $O(n^2)$ time complexity. Within the loop, the twoOptSwap operation takes O(n), and the countPathLength computation also takes O(n). Since the swap and length operation are working independently. When considering these steps together, the overall worst-case time complexity is $O(n^3)$.
+
+Thus, the total complexity of this implementation is $O(n^3)$.
+
+
+
+#### The worst-case memory time complexity is O(n), where n is the matrix length.
+
+
+
+1. The memory complexity of the twoOptSwap function is O(n), n is the length of currentRoute array.
+
+2. The countPathLength function memory complexity is constant since adding totalLength every time O(1).
+
+3. distance_matrix, currentRoute, cur, maxIterate, loop i, j and k are use memory in tsp_ls function. currentRoute array worst case memory complexity is O(n), n is the length of the matrix length. Since  currentRoute occupy the dominate part of memory useage. So, by adding up those steps together, the total memory complexity in worst-case of O(n).
