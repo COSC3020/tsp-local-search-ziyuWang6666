@@ -56,15 +56,15 @@ reasoning, to this markdown file.
 
 ### Answer
 
-#### The total worst-case time complexity is constant with 	$O(n^4)$, n is the number of vertices.
+#### The total worst-case time complexity is constant with 	$O(n^2)$, n is the number of vertices.
 
 1. The function twoOptSwap takes the route length O(n), then createRoute.slice(i+1, k+1) is create a new array with time complexity of O(k-i+1), and then reverses elements in place. So, the worst-case time complexity is O(n).
 
 2. The countPathLength function iterating over route and count to totalLength whose worst-case time complexity is O(n).
 
-3. The tsp_ls algorithm runs in $O(n^2)$ time complexity. Within the loop, the twoOptSwap operation takes O(n), and the countPathLength computation also takes O(n). When considering these steps together, the overall worst-case time complexity is $O(n^4)$.
+3. The tsp_ls algorithm runs in $O(n^2)$ time complexity. Within the loop, the twoOptSwap operation takes O(n), and the countPathLength computation also takes O(n). Since the swap and length operation are working independently. When considering these steps together, the overall worst-case time complexity is $O(n^2)$.
 
-Thus, the total complexity of this implementation is $O(n^4)$.
+Thus, the total complexity of this implementation is $O(n^2)$.
 
 
 
